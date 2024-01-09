@@ -1,0 +1,55 @@
+/*
+
+Split attributes:
+  split-direction = top/bottom/none
+  +
+  split-trigger = scroll/load/none
+
+Fade attributes:
+  fade
+  +
+  split-trigger = scroll/load/none
+  
+*/
+
+[split-direction] {
+  font-kerning: none;
+  -webkit-text-rendering: optimizeSpeed;
+  text-rendering: optimizeSpeed;
+  transform: translateZ(0);
+  opacity: 0;
+  line-height: 1.2;
+}
+
+[split-direction] .fade-overflow {
+  margin: -0.2em 0;
+  overflow: hidden;
+}
+.split-complete {
+  opacity: 1;
+}
+
+/* Split Bottom */
+[split-direction="bottom"] .fade-overflow .fade-el {
+  display: block;
+  transform: translateY(110%);
+}
+
+/* Split Top */
+[split-direction="top"] .fade-overflow .fade-el {
+  display: block;
+  transform: translateY(-110%) rotate(-5deg);
+  transform-origin: bottom left;
+}
+
+/* Fade */
+[fade] {
+  opacity: 0;
+  transform: translate(0px, 50px);
+}
+
+/* Image Scale effect */
+[zoom-out] {
+  @apply opacity-0;
+  @apply scale-[1.3];
+}

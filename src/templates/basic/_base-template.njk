@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    {% include './favicon.njk' %}
+  </head>
+
+  <body class="{{bodyClass}}">
+
+    {% include './sprite-svg.njk' %}
+    {% include './preloader.njk' %}
+    {% include './header.njk' %}
+
+    <main class="smooth-wrapper">
+      <div id="smooth-content">
+
+        {% block before_main %}{% endblock %}
+
+        {% block content %}{% endblock %}
+
+        {% include './footer.njk' %}
+      </div>
+    </main>
+
+    <script src="./js/main.min.js"></script>
+    {% block body_end %}{% endblock %}
+  </body>
+
+</html>
